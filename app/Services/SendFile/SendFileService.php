@@ -1,6 +1,8 @@
 <?php
 
-class SendFile
+namespace App\Services\SendFile;
+
+class SendFileService
 {
     private string $filePath;
 
@@ -11,8 +13,8 @@ class SendFile
         return $this;
     }
 
-    public function sendFile(string $sendLink): void
+    public function send(string $sendLink): void
     {
-        // TODO:
+        // отправка файла обратно по ссылке
     }
 }

@@ -1,11 +1,13 @@
 <?php
 
-class SystemCheckServicec
+namespace App\Services\PaymentSystem;
+
+class CheckPaymentSystemService
 {
     private string $filePath;
 
     public function __construct(
-        private readonly FindCheckSystemService $findCheckSystemService
+        private readonly GetPaymentSystemService $getPaymentSystemService
     )
     {
     }
@@ -22,16 +24,16 @@ class SystemCheckServicec
         // TODO foreach card list
         $cardNumber = '2222222222222222';
 
-        $paymentSystem = $this->findPaymentSystemService->findPaymentSystem($cardNumber);
+        $paymentSystem = $this->getPaymentSystemService->check($cardNumber);
 
-        $this->saveToFile();
+        $this->saveToFile($paymentSystem);
 
         return $this;
     }
 
-    private function saveToFile(): void
+    private function saveToFile(string $paymentSystem): void
     {
-        // TODO save to file
+        // TODO save payment system to file
     }
 
     public function getFilePath(): string
