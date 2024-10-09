@@ -21,7 +21,7 @@ class CheckPaymentSystemService
 
     public function definePaymentSystem(): static
     {
-        // TODO foreach card list
+        // достаём номер карты, прокидываем на проверку и сохраняем результат
         $cardNumber = '2222222222222222';
 
         $paymentSystem = $this->getPaymentSystemService->check($cardNumber);
@@ -33,7 +33,7 @@ class CheckPaymentSystemService
 
     private function saveToFile(string $paymentSystem): void
     {
-        // TODO save payment system to file
+        // логика сохранения результата в файл
     }
 
     public function getFilePath(): string

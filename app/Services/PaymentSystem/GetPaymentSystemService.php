@@ -14,6 +14,7 @@ class GetPaymentSystemService
 
     public function check(string $curdNumber): string
     {
+        // прокидываем номер карты на урл, получаем результат в json, парсим его и получаем в ответ любые интересующие нас данные о карте
         $response = $this->client->request(
             'GET',
             'https://lookup.binlist.net/' . $curdNumber,
